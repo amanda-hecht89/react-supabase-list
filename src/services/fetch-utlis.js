@@ -5,3 +5,9 @@ export async function getCandy() {
 
   return response.body;
 }
+
+export async function getFruit() {
+  const response = await client.from('fruits_2').select('*');
+  
+  return response.body;
+}

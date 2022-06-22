@@ -22,3 +22,18 @@
   display: flex;
   align-self: center;
 }
+
+.fruit {
+  border: 3px dotted black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: blueviolet;
+  width: 30%;
+  margin: 10px;
+}
+
+.fruit-list {
+  background-color: aqua;
+  display: flex;
+}
