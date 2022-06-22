@@ -11,3 +11,9 @@ export async function getFruit() {
   
   return response.body;
 }
+
+export async function getShape() {
+  const response = await client.from('shapes').select('*');
+    
+  return response.body;
+}

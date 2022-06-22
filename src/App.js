@@ -3,6 +3,9 @@ import { getCandy } from './services/fetch-utlis';
 import CandyList from './Candy/CandyList';
 import { getFruit } from './services/fetch-utlis';
 import FruitList from './Fruit/FruitList';
+import { getShape } from './services/fetch-utlis';
+import ShapeList from './Shape/ShapeList';
+
 import Spinner from './Spinner';
 import './App.css';
 // import your arrays here
@@ -11,8 +14,10 @@ function App() {
 
   const [candies, setCandies] = useState([]);
   const [isLoadingCandies, setIsLoadingCandies] = useState(false);
-  const [fruits, setfruits] = useState([]);
+  const [fruits, setFruits] = useState([]);
   const [isLoadingFruit, setIsLoadingFruit] = useState(false);
+  const [shapes, setShape] = useState([]);
+  const [isLoadingShape, setIsLoadingShape] = useState(false);
   
 
   async function fetchCandyData() {
@@ -26,7 +31,14 @@ function App() {
     setIsLoadingFruit(true);
     const data = await getFruit();
     setIsLoadingFruit(false);
-    setfruits(data); 
+    setFruits(data); 
+  }
+
+  async function fetchShapeData() {
+    setIsLoadingShape(true);
+    const data = await getShape();
+    setIsLoadingShape(false);
+    setShape(data); 
   }
 
   useEffect(() => {
@@ -35,6 +47,10 @@ function App() {
 
   useEffect(() => {
     fetchFruitData();
+  }, []);
+
+  useEffect(() => {
+    fetchShapeData();
   }, []);
 
   return (
@@ -47,6 +63,11 @@ function App() {
       <div className='fruit-sec'>
         {
           isLoadingFruit ? Spinner : <FruitList fruits={fruits} />
+        }
+      </div>
+      <div className='shape-sec'>
+        {
+          isLoadingShape ? Spinner : <ShapeList shapes={shapes} />
         }
       </div>
     </div>
