@@ -17,3 +17,9 @@ export async function getShape() {
     
   return response.body;
 }
+
+export async function getActor() {
+  const response = await client.from('actors').select('*');
+      
+  return response.body;
+}

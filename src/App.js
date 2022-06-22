@@ -5,6 +5,8 @@ import { getFruit } from './services/fetch-utlis';
 import FruitList from './Fruit/FruitList';
 import { getShape } from './services/fetch-utlis';
 import ShapeList from './Shape/ShapeList';
+import { getActor } from './services/fetch-utlis';
+import ActorList from './Actor/ActorList';
 
 import Spinner from './Spinner';
 import './App.css';
@@ -18,6 +20,8 @@ function App() {
   const [isLoadingFruit, setIsLoadingFruit] = useState(false);
   const [shapes, setShape] = useState([]);
   const [isLoadingShape, setIsLoadingShape] = useState(false);
+  const [actors, setActors] = useState([]);
+  const [isLoadingActors, setIsLoadingActors] = useState(false);
   
 
   async function fetchCandyData() {
@@ -40,6 +44,12 @@ function App() {
     setIsLoadingShape(false);
     setShape(data); 
   }
+  async function fetchActorData() {
+    setIsLoadingActors(true);
+    const data = await getActor();
+    setIsLoadingActors(false);
+    setActors(data); 
+  }
 
   useEffect(() => {
     fetchCandyData();
@@ -51,6 +61,10 @@ function App() {
 
   useEffect(() => {
     fetchShapeData();
+  }, []);
+
+  useEffect(() => {
+    fetchActorData();
   }, []);
 
   return (
@@ -68,6 +82,11 @@ function App() {
       <div className='shape-sec'>
         {
           isLoadingShape ? Spinner : <ShapeList shapes={shapes} />
+        }
+      </div>
+      <div className='actor-sec'>
+        {
+          isLoadingActors ? Spinner : <ActorList actors={actors} />
         }
       </div>
     </div>
