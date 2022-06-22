@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getCandy } from './services/fetch-utlis';
 import CandyList from './Candy/CandyList';
+import Spinner from './Spinner';
 import './App.css';
 // import your arrays here
 
@@ -11,7 +12,7 @@ function App() {
 
   async function fetchCandyData() {
     setIsLoadingCandies(true);
-    const data = await getCandies();
+    const data = await getCandy();
     setIsLoadingCandies(false);
     setCandies(data); 
   }
@@ -24,7 +25,7 @@ function App() {
     <div className="App">
       <div candy-section>
         {
-          isLoadingCandies
+          isLoadingCandies ? Spinner : <CandyList candies={candies} />
         }</div>
 
 
