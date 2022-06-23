@@ -1,38 +1,69 @@
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
   background-color: #282c34;
-  min-height: 100vh;
+}
+
+.candy {
+  border: 3px dotted black;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 255, 0.334);
+  width: 30%;
+  margin: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.candy-list {
+  background-color: aqua;
+  display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.photos {
+  display: flex;
+  align-self: center;
+}
+
+.fruit {
+  border: 3px dotted black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 255, 0.334);
+  width: 30%;
+  margin: 10px;
+}
+
+.fruit-list {
+  background-color: aqua;
+  display: flex;
+}
+
+.shape {
+  border: 3px dotted black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 255, 0.334);
+  width: 30%;
+  margin: 10px;
+}
+
+.shape-list {
+  background-color: aqua;
+  display: flex;
+}
+
+.actor {
+  border: 3px dotted black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 255, 0.334);
+  width: 30%;
+  margin: 10px;
+}
+
+.actor-list {
+  background-color: aqua;
+  display: flex;
 }
