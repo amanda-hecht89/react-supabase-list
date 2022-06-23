@@ -69,6 +69,7 @@ function App() {
 
   return (
     <div className="App">
+      <header><h1>WELCOME</h1></header>
       <div className='candy-sec'>
         {
           isLoadingCandies ? Spinner : <CandyList candies={candies} />
